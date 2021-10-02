@@ -12,4 +12,3 @@ def test2_fizzBuzz():
 def test3_fizzBuzz():
     test = fizzBuzz(3)
     assert test == '3'
-    
