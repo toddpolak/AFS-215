@@ -23,4 +23,9 @@ describe('Test', () => {
     it('Get FizzBuzz when pass in 15 (a multiple of 3 and 5)', () => {
         assert.equal(fizzbuzz(15), 'FizzBuzz')
     })
+
+    // Should fail:
+    //it('failing test (this test should fail)', () => {
+        //assert.equal(fizzbuzz(0), '0')
+    //})
 })
