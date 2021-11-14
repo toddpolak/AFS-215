@@ -2,7 +2,6 @@ import { assert, expect } from 'chai'
 import { Checkout, Product, DiscountRule } from '../walmart.js'
 
 describe('Run Tests', () => {
-
     let myCheckout
 
     it('Can create an instance of the Checkout class', () => {
@@ -14,7 +13,6 @@ describe('Run Tests', () => {
     })
 
     it('Can add an item & price', () => {
-
         assert.deepEqual(myCheckout.add_product(new Product('Milk', 3)), 
             [{name: 'Milk', price: 3}])
     })
@@ -35,7 +33,6 @@ describe('Run Tests', () => {
             {name: 'Eggs', price: 2}])
 
         assert.equal(myCheckout.calculate_current_total(), 6.5)
-
     })
 
 })
