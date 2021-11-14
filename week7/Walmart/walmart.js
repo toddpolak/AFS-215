@@ -3,6 +3,10 @@ class Product {
         this.name = name
         this.price = price
     }
+
+    //add_price(price) {
+        //this.price = price
+    //}
 }
 
 class DiscountRule {
@@ -20,6 +24,7 @@ class Checkout {
 
     add_product(product) {
         this.items.push(product)
+        return this.items
     }
 
     add_discount_rule(rule) {
@@ -32,7 +37,6 @@ class Checkout {
         this.items.forEach(item => {
             cart_total += item.price
         });
-
         return cart_total
     }
 
@@ -46,21 +50,21 @@ class Checkout {
                 }
             })
         })
-
         return this.calculate_current_total() - discount_total
     }
 }
 
-let myCheckout = new Checkout()
-let myProduct = new Product('Milk', 3)
-let myDiscount = new DiscountRule('Milk', .25)
+// let myCheckout = new Checkout()
+// let myProduct = new Product('Milk', 3)
+// let myDiscount = new DiscountRule('Milk', .25)
 
-myCheckout.add_product(myProduct)
+// myCheckout.add_product(myProduct)
 
-console.log(myCheckout.items)
-console.log(myCheckout.calculate_current_total())
+// console.log(myCheckout.items)
+// console.log(myCheckout.calculate_current_total())
 
-myCheckout.add_discount_rule(myDiscount)
+// myCheckout.add_discount_rule(myDiscount)
 
-console.log(myCheckout.apply_discount())
+// console.log(myCheckout.apply_discount())
 
+export { Checkout, Product, DiscountRule }
