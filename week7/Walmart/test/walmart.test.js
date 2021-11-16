@@ -22,7 +22,6 @@ describe('Run Tests', () => {
     })
 
     it('Can add multiple items and get correct total', () => {
-
         assert.deepEqual(myCheckout.add_product(new Product('Bread', 1.5)), 
             [{name: 'Milk', price: 3}, 
             {name: 'Bread', price: 1.5}])
@@ -35,10 +34,16 @@ describe('Run Tests', () => {
         assert.equal(myCheckout.calculate_current_total(), 6.5)
     })
 
+    it('Can add discount rules', () => {
+        assert.deepEqual(myCheckout.add_discount_rule(new DiscountRule('Milk', .25)), 
+            [{product: 'Milk', discount: .25}])
+    })
+
+    it('Can apply discount rules to the total', () => {
+        assert.equal(myCheckout.apply_discount(), 6.25)
+    })
+
+    it('Exception is thrown for item added without a price', () => {
+        assert.throws(() => myCheckout.add_product(new Product('Soda')), 'Empty Price')
+    })
 })
-
-
-
-
-
-
